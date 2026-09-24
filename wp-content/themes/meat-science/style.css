@@ -1,0 +1,77 @@
+/*
+Theme Name: Meat Science
+Theme URI: https://github.com/shubhamsharma950/meatscience
+Author: Meat Science
+Description: A lightweight Meat Science theme with an ACF-managed utility header.
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+Text Domain: meat-science
+*/
+
+:root {
+	--meat-science-content-width: 1200px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: #fff;
+	color: #222;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	line-height: 1.6;
+	margin: 0;
+}
+
+a {
+	color: #b5122d;
+}
+
+a:hover,
+a:focus-visible {
+	color: #ed1b3b;
+}
+
+.meat-science-site {
+	min-height: 100vh;
+}
+
+.meat-science-main {
+	margin: 0 auto;
+	max-width: var(--meat-science-content-width);
+	padding: 48px 24px;
+}
+
+.meat-science-entry + .meat-science-entry {
+	border-top: 1px solid #e5e5e5;
+	margin-top: 40px;
+	padding-top: 40px;
+}
+
+.meat-science-entry__title {
+	margin: 0 0 16px;
+}
+
+.meat-science-entry__title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.meat-science-entry__meta {
+	color: #666;
+	font-size: 14px;
+}
+
+.meat-science-footer {
+	border-top: 1px solid #e5e5e5;
+	color: #666;
+	font-size: 14px;
+	padding: 24px;
+	text-align: center;
+}
