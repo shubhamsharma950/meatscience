@@ -190,19 +190,45 @@ add_action( 'wp_enqueue_scripts', 'meatscience_enqueue_header_assets' );
  * @return string
  */
 function meatscience_render_icon( $icon ) {
-	$class = '';
+	if ( is_array( $icon ) && isset( $icon['type'], $icon['value'] ) ) {
+		$type  = sanitize_key( $icon['type'] );
+		$value = $icon['value'];
 
-	if ( is_array( $icon ) ) {
-		$class = isset( $icon['class'] ) ? $icon['class'] : '';
-	} elseif ( is_string( $icon ) ) {
-		$class = $icon;
+		if ( 'dashicons' === $type && is_string( $value ) ) {
+			$class = 0 === strpos( $value, 'dashicons-' ) ? $value : 'dashicons-' . sanitize_key( $value );
+			return '<span class="dashicons ' . esc_attr( $class ) . '" aria-hidden="true"></span>';
+		}
+
+		if ( 'media_library' === $type && is_array( $value ) && ! empty( $value['url'] ) ) {
+			return '<img src="' . esc_url( $value['url'] ) . '" alt="" aria-hidden="true">';
+		}
+
+		if ( 'media_library' === $type && is_numeric( $value ) ) {
+			$url = wp_get_attachment_image_url( (int) $value, 'thumbnail' );
+			if ( $url ) {
+				return '<img src="' . esc_url( $url ) . '" alt="" aria-hidden="true">';
+			}
+		}
+
+		if ( 'url' === $type && is_string( $value ) ) {
+			return '<img src="' . esc_url( $value ) . '" alt="" aria-hidden="true">';
+		}
 	}
 
-	if ( '' === $class ) {
+	if ( is_string( $icon ) && '' !== $icon ) {
+		$class = 0 === strpos( $icon, 'dashicons-' ) ? $icon : 'dashicons-' . sanitize_key( $icon );
+		return '<span class="dashicons ' . esc_attr( $class ) . '" aria-hidden="true"></span>';
+	}
+
+	if ( is_array( $icon ) && ! empty( $icon['class'] ) ) {
+		return '<span class="dashicons ' . esc_attr( sanitize_html_class( $icon['class'] ) ) . '" aria-hidden="true"></span>';
+	}
+
+	if ( empty( $icon ) ) {
 		return '';
 	}
 
-	return '<span class="' . esc_attr( $class ) . '" aria-hidden="true"></span>';
+	return '';
 }
 
 /**
