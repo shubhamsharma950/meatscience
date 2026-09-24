@@ -1,0 +1,16 @@
+# Local WordPress configuration contains database credentials and secret salts.
+wp-config.php
+
+# Local/runtime files.
+.env
+.env.*
+!.env.example
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+
+# Editor and OS metadata.
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
