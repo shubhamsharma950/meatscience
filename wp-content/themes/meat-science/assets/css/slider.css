@@ -1,0 +1,233 @@
+.meat-science-slider {
+	background: #111;
+	color: #fff;
+	height: clamp(440px, 35vw, 675px);
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.meat-science-slider__track,
+.meat-science-slider__slide {
+	height: 100%;
+	width: 100%;
+}
+
+.meat-science-slider__slide {
+	inset: 0;
+	opacity: 0;
+	position: absolute;
+	transition: opacity 700ms ease;
+	visibility: hidden;
+}
+
+.meat-science-slider__slide.is-active {
+	opacity: 1;
+	visibility: visible;
+	z-index: 1;
+}
+
+.meat-science-slider__image {
+	display: block;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.meat-science-slider__overlay {
+	background: linear-gradient(90deg, rgba(0, 0, 0, .82) 0%, rgba(0, 0, 0, .55) 38%, rgba(0, 0, 0, 0) 68%);
+	inset: 0;
+	position: absolute;
+}
+
+.meat-science-slider__inner {
+	align-items: center;
+	display: flex;
+	inset: 0;
+	margin: 0 auto;
+	max-width: 1440px;
+	padding: 48px;
+	position: absolute;
+}
+
+.meat-science-slider__content {
+	max-width: 650px;
+	position: relative;
+	z-index: 1;
+}
+
+.meat-science-slider__heading {
+	color: inherit;
+	font-size: clamp(42px, 4vw, 68px);
+	font-weight: 700;
+	letter-spacing: .025em;
+	line-height: .98;
+	margin: 0 0 34px;
+	text-transform: uppercase;
+}
+
+.meat-science-slider__text {
+	font-size: clamp(22px, 2vw, 34px);
+	font-weight: 400;
+	line-height: 1.28;
+}
+
+.meat-science-slider__text p {
+	margin: 0 0 32px;
+}
+
+.meat-science-slider__button {
+	background: #ed1b3b;
+	border: 2px solid #ed1b3b;
+	border-radius: 5px;
+	color: #fff;
+	display: inline-block;
+	font-size: clamp(18px, 1.5vw, 25px);
+	font-weight: 700;
+	line-height: 1;
+	padding: 16px 36px;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.meat-science-slider__button:hover,
+.meat-science-slider__button:focus-visible {
+	background: #fff;
+	border-color: #fff;
+	color: #b5122d;
+}
+
+.meat-science-slider__arrow {
+	align-items: center;
+	background: rgba(0, 0, 0, .35);
+	border: 0;
+	border-radius: 50%;
+	color: #fff;
+	cursor: pointer;
+	display: flex;
+	font-size: 26px;
+	height: 46px;
+	justify-content: center;
+	padding: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: background-color 180ms ease;
+	width: 46px;
+	z-index: 2;
+}
+
+.meat-science-slider__arrow:hover,
+.meat-science-slider__arrow:focus-visible {
+	background: #ed1b3b;
+}
+
+.meat-science-slider__arrow--previous {
+	left: 16px;
+}
+
+.meat-science-slider__arrow--next {
+	right: 16px;
+}
+
+.meat-science-slider__dots {
+	bottom: 18px;
+	display: flex;
+	gap: 9px;
+	left: 50%;
+	position: absolute;
+	transform: translateX(-50%);
+	z-index: 2;
+}
+
+.meat-science-slider__dot {
+	background: rgba(255, 255, 255, .55);
+	border: 0;
+	border-radius: 50%;
+	cursor: pointer;
+	height: 11px;
+	padding: 0;
+	width: 11px;
+}
+
+.meat-science-slider__dot.is-active {
+	background: #ed1b3b;
+}
+
+@media (max-width: 800px) {
+	.meat-science-slider {
+		height: clamp(420px, 72vw, 570px);
+	}
+
+	.meat-science-slider__overlay {
+		background: linear-gradient(90deg, rgba(0, 0, 0, .78), rgba(0, 0, 0, .25));
+	}
+
+	.meat-science-slider__inner {
+		padding: 40px 48px;
+	}
+
+	.meat-science-slider__heading {
+		font-size: clamp(34px, 7vw, 48px);
+		margin-bottom: 22px;
+	}
+
+	.meat-science-slider__text {
+		font-size: clamp(19px, 3.5vw, 25px);
+	}
+
+	.meat-science-slider__text p {
+		margin-bottom: 24px;
+	}
+
+	.meat-science-slider__button {
+		padding: 14px 26px;
+	}
+}
+
+@media (max-width: 520px) {
+	.meat-science-slider {
+		height: 500px;
+	}
+
+	.meat-science-slider__image {
+		object-position: center;
+	}
+
+	.meat-science-slider__overlay {
+		background: rgba(0, 0, 0, .56);
+	}
+
+	.meat-science-slider__inner {
+		align-items: flex-end;
+		padding: 40px 24px 62px;
+	}
+
+	.meat-science-slider__heading {
+		font-size: 34px;
+	}
+
+	.meat-science-slider__text {
+		font-size: 19px;
+	}
+
+	.meat-science-slider__arrow {
+		height: 38px;
+		width: 38px;
+	}
+
+	.meat-science-slider__arrow--previous {
+		left: 8px;
+	}
+
+	.meat-science-slider__arrow--next {
+		right: 8px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.meat-science-slider__slide {
+		transition: none;
+	}
+}

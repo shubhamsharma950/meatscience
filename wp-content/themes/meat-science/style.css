@@ -10,7 +10,7 @@ Text Domain: meat-science
 */
 
 :root {
-	--meat-science-content-width: 1200px;
+	--meat-science-content-width: 1440px;
 }
 
 * {
@@ -24,9 +24,13 @@ html {
 body {
 	background: #fff;
 	color: #222;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	font-family: "Asap Condensed", sans-serif;
 	line-height: 1.6;
 	margin: 0;
+}
+
+body.has-video-modal-open {
+	overflow: hidden;
 }
 
 a {
@@ -46,6 +50,1316 @@ a:focus-visible {
 	margin: 0 auto;
 	max-width: var(--meat-science-content-width);
 	padding: 48px 24px;
+}
+
+.meat-science-builder {
+	width: 100%;
+}
+
+.meat-science-builder__block {
+	margin: 0 auto;
+	max-width: var(--meat-science-content-width);
+	padding: 28px 24px;
+}
+
+.meat-science-builder__block--content {
+	font-size: 20px;
+	line-height: 1.7;
+}
+
+.meat-science-builder__block--heading {
+	padding-bottom: 8px;
+	padding-top: 40px;
+}
+
+.meat-science-builder__heading {
+	font-size: clamp(28px, 3vw, 48px);
+	line-height: 1.15;
+	margin: 0;
+}
+
+.meat-science-builder__button {
+	background: #ed1b3b;
+	border-radius: 5px;
+	color: #fff;
+	display: inline-flex;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1;
+	padding: 14px 28px;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: background-color 180ms ease, color 180ms ease;
+}
+
+.meat-science-builder__button:hover,
+.meat-science-builder__button:focus-visible {
+	background: #111;
+	color: #fff;
+}
+
+.meat-science-builder__content > *:first-child {
+	margin-top: 0;
+}
+
+.meat-science-builder__content > *:last-child {
+	margin-bottom: 0;
+}
+
+.meat-science-resource-library {
+	padding-bottom: 48px;
+	padding-top: 48px;
+	text-align: center;
+}
+
+.meat-science-resource-library__heading {
+	border-bottom: 5px solid #ed1b3b;
+	display: inline-block;
+	font-size: clamp(32px, 4vw, 56px);
+	line-height: 1;
+	margin: 0 0 56px;
+	padding-bottom: 8px;
+	text-transform: uppercase;
+}
+
+.meat-science-resource-library__grid {
+	display: grid;
+	gap: 52px 32px;
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.meat-science-resource-library__item {
+	min-width: 0;
+}
+
+.meat-science-resource-library__link {
+	color: inherit;
+	display: block;
+	text-decoration: none;
+}
+
+.meat-science-resource-library__link:hover,
+.meat-science-resource-library__link:focus-visible {
+	color: #ed1b3b;
+}
+
+.meat-science-resource-library__image {
+	display: block;
+	height: 112px;
+	margin: 0 auto 22px;
+	max-width: 100%;
+	object-fit: contain;
+	width: auto;
+}
+
+.meat-science-resource-library__item-heading {
+	font-size: clamp(22px, 2.2vw, 32px);
+	line-height: 1.05;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.meat-science-resource-downloads {
+	padding-bottom: 56px;
+	padding-top: 56px;
+	text-align: center;
+}
+
+.meat-science-resource-downloads__heading {
+	border-bottom: 5px solid #ed1b3b;
+	color: #111;
+	display: inline-block;
+	font-size: clamp(32px, 4vw, 56px);
+	line-height: 1.1;
+	margin: 0 0 32px;
+	padding-bottom: 8px;
+	text-transform: uppercase;
+}
+
+.meat-science-resource-downloads__table-wrapper {
+	border: 1px solid #e4e4e4;
+	border-radius: 12px;
+	box-shadow: 0 10px 30px rgba(17, 17, 17, 0.06);
+	overflow: hidden;
+}
+
+.meat-science-resource-downloads__table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.meat-science-resource-downloads__table th,
+.meat-science-resource-downloads__table td {
+	border-bottom: 1px solid #e9e9e9;
+	padding: 17px 20px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.meat-science-resource-downloads__table thead {
+	background: #171717;
+	color: #fff;
+}
+
+.meat-science-resource-downloads__table thead th {
+	border: 0;
+	font-size: 14px;
+	letter-spacing: 0.04em;
+	padding-bottom: 14px;
+	padding-top: 14px;
+	text-transform: uppercase;
+}
+
+.meat-science-resource-downloads__table tbody tr {
+	background: #fff;
+	transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.meat-science-resource-downloads__table tbody tr:last-child > * {
+	border-bottom: 0;
+}
+
+.meat-science-resource-downloads__table tbody tr:hover,
+.meat-science-resource-downloads__table tbody tr:focus-within {
+	background: #fff7f8;
+	box-shadow: inset 4px 0 0 #ed1b3b;
+	transform: translateX(4px);
+}
+
+.meat-science-resource-downloads__table tbody th {
+	color: #171717;
+	font-size: 17px;
+	font-weight: 700;
+}
+
+.meat-science-resource-downloads__table tbody td {
+	color: #5c5c5c;
+	font-size: 15px;
+}
+
+.meat-science-resource-downloads__action {
+	text-align: right !important;
+	white-space: nowrap;
+	width: 1%;
+}
+
+.meat-science-resource-downloads__button {
+	align-items: center;
+	background: #ed1b3b;
+	border-radius: 999px;
+	color: #fff;
+	display: inline-flex;
+	font-size: 14px;
+	font-weight: 700;
+	gap: 9px;
+	padding: 10px 16px;
+	text-decoration: none;
+	transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.meat-science-resource-downloads__button::after {
+	border-bottom: 2px solid currentColor;
+	border-right: 2px solid currentColor;
+	content: "";
+	height: 7px;
+	transform: rotate(45deg) translateY(-2px);
+	width: 7px;
+}
+
+.meat-science-resource-downloads__button:hover,
+.meat-science-resource-downloads__button:focus-visible {
+	background: #171717;
+	box-shadow: 0 6px 16px rgba(17, 17, 17, 0.22);
+	color: #fff;
+	transform: translateY(-2px);
+}
+
+.meat-science-resource-downloads__button--pending {
+	background: #9a9a9a;
+	cursor: not-allowed;
+}
+
+.meat-science-cpt-slider {
+	padding-bottom: 48px;
+	padding-top: 48px;
+	text-align: center;
+}
+
+.meat-science-cpt-slider__heading {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.meat-science-cpt-slider__wrapper {
+	position: relative;
+}
+
+.meat-science-cpt-slider__track {
+	display: flex;
+	gap: 32px;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+	scrollbar-width: none;
+	text-align: left;
+	width: 100%;
+}
+
+.meat-science-cpt-slider__track::-webkit-scrollbar {
+	display: none;
+}
+
+.meat-science-cpt-slider__card {
+	background: #fff;
+	border: 1px solid #d9d9d9;
+	border-top: 5px solid #ed1b3b;
+	flex: 0 0 calc((100% - 64px) / 3);
+	min-width: 0;
+	scroll-snap-align: start;
+}
+
+.meat-science-cpt-slider__card-link {
+	color: inherit;
+	display: block;
+	height: 100%;
+	text-decoration: none;
+}
+
+.meat-science-cpt-slider__image-wrap {
+	aspect-ratio: 16 / 10;
+	overflow: hidden;
+}
+
+.meat-science-cpt-slider__image {
+	display: block;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.meat-science-cpt-slider__body {
+	padding: 20px 24px 28px;
+}
+
+.meat-science-cpt-slider__category {
+	color: #ed1b3b;
+	display: block;
+	font-size: 16px;
+	font-weight: 500;
+	margin-bottom: 8px;
+}
+
+.meat-science-cpt-slider__title {
+	font-size: clamp(20px, 2vw, 26px);
+	line-height: 1.2;
+	margin: 0 0 14px;
+	text-transform: uppercase;
+}
+
+.meat-science-cpt-slider__excerpt {
+	color: #444;
+	font-size: 16px;
+	line-height: 1.6;
+	margin: 0;
+}
+
+.meat-science-cpt-slider__arrow {
+	align-items: center;
+	background: #fff;
+	border: 1px solid #d9d9d9;
+	border-radius: 50%;
+	color: #222;
+	cursor: pointer;
+	display: flex;
+	font-size: 20px;
+	height: 44px;
+	justify-content: center;
+	padding: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: background-color 180ms ease, color 180ms ease;
+	width: 44px;
+	z-index: 2;
+}
+
+.meat-science-cpt-slider__arrow--previous {
+	left: -60px;
+}
+
+.meat-science-cpt-slider__arrow--next {
+	right: -60px;
+}
+
+.meat-science-cpt-slider__arrow:hover,
+.meat-science-cpt-slider__arrow:focus-visible {
+	background: #ed1b3b;
+	border-color: #ed1b3b;
+	color: #fff;
+}
+
+@media (max-width: 1300px) {
+	.meat-science-cpt-slider__arrow--previous {
+		left: 8px;
+	}
+
+	.meat-science-cpt-slider__arrow--next {
+		right: 8px;
+	}
+}
+
+@media (max-width: 900px) {
+	.meat-science-cpt-slider__card {
+		flex-basis: calc((100% - 32px) / 2);
+	}
+}
+
+@media (max-width: 560px) {
+	.meat-science-cpt-slider__card {
+		flex-basis: 85%;
+	}
+
+	.meat-science-cpt-slider__arrow {
+		height: 38px;
+		width: 38px;
+	}
+}
+
+.meat-science-membership-spotlight {
+	background: var(--membership-spotlight-bg, #243947);
+	color: #fff;
+	padding: 76px 24px 82px;
+}
+
+.meat-science-membership-spotlight__inner {
+	margin: 0 auto;
+	max-width: 1180px;
+}
+
+.meat-science-membership-spotlight__intro {
+	align-items: flex-start;
+	display: grid;
+	gap: 40px;
+	grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr);
+	margin-bottom: 68px;
+}
+
+.meat-science-membership-spotlight__headline {
+	max-width: 640px;
+}
+
+.meat-science-membership-spotlight__badge {
+	background: #ed1b3b;
+	border-radius: 4px;
+	color: #fff;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: .03em;
+	line-height: 1;
+	margin-bottom: 18px;
+	padding: 10px 18px;
+	text-transform: uppercase;
+}
+
+.meat-science-membership-spotlight__heading {
+	color: inherit;
+	font-size: clamp(42px, 4.1vw, 86px);
+	font-weight: 700;
+	line-height: .93;
+	margin: 0;
+	max-width: 650px;
+}
+
+.meat-science-membership-spotlight__copy {
+	margin-left: auto;
+	max-width: 500px;
+	padding-top: 30px;
+}
+
+.meat-science-membership-spotlight__description {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1.42;
+	margin-bottom: 28px;
+}
+
+.meat-science-membership-spotlight__description > *:first-child {
+	margin-top: 0;
+}
+
+.meat-science-membership-spotlight__description > *:last-child {
+	margin-bottom: 0;
+}
+
+.meat-science-membership-spotlight__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
+.meat-science-membership-spotlight__button {
+	align-items: center;
+	border: 2px solid transparent;
+	border-radius: 3px;
+	display: inline-flex;
+	font-size: 16px;
+	font-weight: 700;
+	gap: 14px;
+	justify-content: center;
+	line-height: 1;
+	min-height: 54px;
+	min-width: 160px;
+	overflow: hidden;
+	padding: 17px 28px;
+	position: relative;
+	text-decoration: none;
+	transition: color 260ms ease, border-color 260ms ease, background-color 260ms ease;
+}
+
+.meat-science-membership-spotlight__button::before {
+	content: "";
+	inset: 0;
+	position: absolute;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 320ms ease;
+	z-index: 0;
+}
+
+.meat-science-membership-spotlight__button:hover::before,
+.meat-science-membership-spotlight__button:focus-visible::before {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+.meat-science-membership-spotlight__button-text,
+.meat-science-membership-spotlight__button-icon {
+	position: relative;
+	z-index: 1;
+}
+
+.meat-science-membership-spotlight__button-icon {
+	font-size: 24px;
+	line-height: .7;
+}
+
+.meat-science-membership-spotlight__button--primary {
+	background: #ed1b3b;
+	border-color: #ed1b3b;
+	color: #fff;
+}
+
+.meat-science-membership-spotlight__button--primary::before {
+	background: #fff;
+}
+
+.meat-science-membership-spotlight__button--primary:hover,
+.meat-science-membership-spotlight__button--primary:focus-visible {
+	color: #ed1b3b;
+}
+
+.meat-science-membership-spotlight__button--secondary {
+	background: transparent;
+	border-color: rgba(255, 255, 255, .9);
+	color: #fff;
+	min-width: 175px;
+}
+
+.meat-science-membership-spotlight__button--secondary::before {
+	background: #fff;
+}
+
+.meat-science-membership-spotlight__button--secondary:hover,
+.meat-science-membership-spotlight__button--secondary:focus-visible {
+	color: #243947;
+}
+
+.meat-science-membership-spotlight__cards {
+	display: grid;
+	gap: 24px;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.meat-science-membership-spotlight__card {
+	align-items: center;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 18px 30px rgba(10, 18, 24, 0.12);
+	color: #232323;
+	display: flex;
+	flex-direction: column;
+	min-height: 382px;
+	padding: 22px 20px 22px;
+	text-align: center;
+	transition: background-color 260ms ease, box-shadow 260ms ease, color 260ms ease, transform 260ms ease;
+}
+
+.meat-science-membership-spotlight__card:hover,
+.meat-science-membership-spotlight__card:focus-within {
+	background: #ed1b3b;
+	box-shadow: 0 24px 42px rgba(10, 18, 24, 0.28);
+	color: #fff;
+	transform: translateY(-8px);
+}
+
+.meat-science-membership-spotlight__card-image {
+	display: block;
+	height: 164px;
+	margin: 0 auto 18px;
+	object-fit: cover;
+	width: 100%;
+}
+
+.meat-science-membership-spotlight__card-title {
+	color: inherit;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0 0 18px;
+}
+
+.meat-science-membership-spotlight__card-description {
+	color: #7a7a7a;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 1.45;
+	margin: 0 0 18px;
+	transition: color 260ms ease;
+}
+
+.meat-science-membership-spotlight__card:hover .meat-science-membership-spotlight__card-description,
+.meat-science-membership-spotlight__card:focus-within .meat-science-membership-spotlight__card-description {
+	color: rgba(255, 255, 255, .88);
+}
+
+.meat-science-membership-spotlight__card-description > *:first-child {
+	margin-top: 0;
+}
+
+.meat-science-membership-spotlight__card-description > *:last-child {
+	margin-bottom: 0;
+}
+
+.meat-science-membership-spotlight__card-link {
+	align-items: center;
+	background: #fff;
+	border-radius: 999px;
+	color: #ed1b3b;
+	display: inline-flex;
+	font-size: 18px;
+	font-weight: 700;
+	gap: 0;
+	height: 32px;
+	justify-content: center;
+	line-height: 1;
+	margin-top: auto;
+	opacity: 0;
+	overflow: hidden;
+	padding: 0 10px;
+	pointer-events: none;
+	text-decoration: none;
+	transform: translateY(10px);
+	transition: width 260ms ease, box-shadow 180ms ease, color 180ms ease, opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+	visibility: hidden;
+	width: 32px;
+}
+
+.meat-science-membership-spotlight__card:hover .meat-science-membership-spotlight__card-link,
+.meat-science-membership-spotlight__card:focus-within .meat-science-membership-spotlight__card-link {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(0);
+	visibility: visible;
+}
+
+.meat-science-membership-spotlight__card-link-icon {
+	align-items: center;
+	display: inline-flex;
+	flex: 0 0 auto;
+	height: 100%;
+	justify-content: center;
+	width: 12px;
+}
+
+.meat-science-membership-spotlight__card-link-text {
+	font-size: 15px;
+	max-width: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition: max-width 260ms ease, opacity 180ms ease, padding-left 260ms ease;
+	white-space: nowrap;
+}
+
+.meat-science-membership-spotlight__card-link:hover,
+.meat-science-membership-spotlight__card-link:focus-visible {
+	box-shadow: 0 8px 18px rgba(10, 18, 24, .2);
+	color: #ed1b3b;
+	width: 154px;
+}
+
+.meat-science-membership-spotlight__card-link:hover .meat-science-membership-spotlight__card-link-text,
+.meat-science-membership-spotlight__card-link:focus-visible .meat-science-membership-spotlight__card-link-text {
+	max-width: 112px;
+	opacity: 1;
+	padding-left: 9px;
+}
+
+@media (hover: none) {
+	.meat-science-membership-spotlight__card-link {
+		opacity: 1;
+		pointer-events: auto;
+		transform: none;
+		visibility: visible;
+	}
+}
+
+@media (max-width: 1000px) {
+	.meat-science-membership-spotlight__intro {
+		gap: 40px;
+	}
+
+	.meat-science-membership-spotlight__cards {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 760px) {
+	.meat-science-membership-spotlight {
+		padding-bottom: 56px;
+		padding-top: 56px;
+	}
+
+	.meat-science-membership-spotlight__intro {
+		grid-template-columns: 1fr;
+		margin-bottom: 44px;
+	}
+
+	.meat-science-membership-spotlight__copy {
+		padding-top: 0;
+	}
+
+	.meat-science-membership-spotlight__heading {
+		max-width: none;
+	}
+}
+
+@media (max-width: 520px) {
+	.meat-science-membership-spotlight {
+		padding-left: 18px;
+		padding-right: 18px;
+	}
+
+	.meat-science-membership-spotlight__actions,
+	.meat-science-membership-spotlight__button {
+		width: 100%;
+	}
+
+	.meat-science-membership-spotlight__cards {
+		grid-template-columns: 1fr;
+	}
+}
+
+.meat-science-call-to-action {
+	padding-bottom: 72px;
+	padding-top: 72px;
+}
+
+.meat-science-call-to-action__card {
+	background: linear-gradient(135deg, #fff 0%, #fff 65%, #fff8f9 100%);
+	border: 1px solid #eceff1;
+	border-radius: 18px;
+	box-shadow: 0 24px 60px rgba(22, 36, 45, .1);
+	display: grid;
+	grid-template-columns: minmax(320px, .86fr) minmax(0, 1.14fr);
+	min-height: 270px;
+	overflow: hidden;
+	position: relative;
+	transition: box-shadow 300ms ease, transform 300ms ease;
+}
+
+.meat-science-call-to-action__card::after {
+	background: var(--call-to-action-accent, #ed1b3b);
+	content: "";
+	height: 4px;
+	inset: auto 0 0;
+	position: absolute;
+	transform: scaleX(.16);
+	transform-origin: left;
+	transition: transform 400ms ease;
+}
+
+.meat-science-call-to-action__card:hover,
+.meat-science-call-to-action__card:focus-within {
+	box-shadow: 0 30px 75px rgba(22, 36, 45, .16);
+	transform: translateY(-5px);
+}
+
+.meat-science-call-to-action__card:hover::after,
+.meat-science-call-to-action__card:focus-within::after {
+	transform: scaleX(1);
+}
+
+.meat-science-call-to-action__media {
+	min-height: 270px;
+	overflow: visible;
+	position: relative;
+}
+
+.meat-science-call-to-action__image {
+	display: block;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 650ms ease;
+	width: 100%;
+}
+
+.meat-science-call-to-action__card:hover .meat-science-call-to-action__image,
+.meat-science-call-to-action__card:focus-within .meat-science-call-to-action__image {
+	transform: scale(1.035);
+}
+
+.meat-science-call-to-action__mark {
+	align-items: center;
+	background: var(--call-to-action-accent, #ed1b3b);
+	border: 8px solid #fff;
+	border-radius: 50%;
+	box-shadow: 0 12px 30px rgba(237, 27, 59, .24);
+	color: #fff;
+	display: flex;
+	height: 92px;
+	justify-content: center;
+	position: absolute;
+	right: -46px;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: transform 300ms ease;
+	width: 92px;
+	z-index: 2;
+}
+
+.meat-science-call-to-action__card:hover .meat-science-call-to-action__mark,
+.meat-science-call-to-action__card:focus-within .meat-science-call-to-action__mark {
+	transform: translateY(-50%) rotate(90deg);
+}
+
+.meat-science-call-to-action__mark-icon {
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 1;
+}
+
+.meat-science-call-to-action__content {
+	align-items: center;
+	display: grid;
+	gap: 36px;
+	grid-template-columns: minmax(0, 1fr) auto;
+	padding: 42px 48px 42px 76px;
+}
+
+.meat-science-call-to-action__eyebrow {
+	color: var(--call-to-action-accent, #ed1b3b);
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: .12em;
+	margin-bottom: 8px;
+	text-transform: uppercase;
+}
+
+.meat-science-call-to-action__heading {
+	color: #172832;
+	font-size: clamp(26px, 2.2vw, 36px);
+	letter-spacing: -.025em;
+	line-height: 1.08;
+	margin: 0 0 14px;
+}
+
+.meat-science-call-to-action__description {
+	color: #65727a;
+	font-size: 17px;
+	line-height: 1.6;
+	max-width: 620px;
+}
+
+.meat-science-call-to-action__description > * {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.meat-science-call-to-action__button {
+	align-items: center;
+	background: var(--call-to-action-accent, #ed1b3b);
+	border: 2px solid var(--call-to-action-accent, #ed1b3b);
+	border-radius: 6px;
+	box-shadow: 0 10px 22px rgba(237, 27, 59, .18);
+	color: #fff;
+	display: inline-flex;
+	font-size: 16px;
+	font-weight: 700;
+	gap: 24px;
+	justify-content: center;
+	min-height: 56px;
+	padding: 15px 22px;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.meat-science-call-to-action__button-icon {
+	font-size: 24px;
+	line-height: .7;
+	transition: transform 220ms ease;
+}
+
+.meat-science-call-to-action__button:hover,
+.meat-science-call-to-action__button:focus-visible {
+	background: #172832;
+	border-color: #172832;
+	box-shadow: 0 12px 28px rgba(23, 40, 50, .22);
+	color: #fff;
+}
+
+.meat-science-call-to-action__button:hover .meat-science-call-to-action__button-icon,
+.meat-science-call-to-action__button:focus-visible .meat-science-call-to-action__button-icon {
+	transform: translateX(5px);
+}
+
+@media (max-width: 1050px) {
+	.meat-science-call-to-action__content {
+		align-items: flex-start;
+		grid-template-columns: 1fr;
+		padding-right: 40px;
+	}
+
+	.meat-science-call-to-action__button {
+		justify-self: start;
+	}
+}
+
+@media (max-width: 760px) {
+	.meat-science-call-to-action {
+		padding-bottom: 48px;
+		padding-top: 48px;
+	}
+
+	.meat-science-call-to-action__card {
+		grid-template-columns: 1fr;
+	}
+
+	.meat-science-call-to-action__media {
+		min-height: 230px;
+	}
+
+	.meat-science-call-to-action__mark {
+		bottom: -38px;
+		height: 76px;
+		right: 28px;
+		top: auto;
+		transform: none;
+		width: 76px;
+	}
+
+	.meat-science-call-to-action__card:hover .meat-science-call-to-action__mark,
+	.meat-science-call-to-action__card:focus-within .meat-science-call-to-action__mark {
+		transform: rotate(90deg);
+	}
+
+	.meat-science-call-to-action__content {
+		gap: 26px;
+		padding: 52px 28px 34px;
+	}
+}
+
+@media (max-width: 440px) {
+	.meat-science-call-to-action__button {
+		width: 100%;
+	}
+}
+
+.meat-science-partner-marquee {
+	background: #fff;
+	overflow: hidden;
+	padding: 72px 0 58px;
+	text-align: center;
+	width: 100%;
+}
+
+.meat-science-partner-marquee__heading {
+	color: #172832;
+	font-size: clamp(30px, 3vw, 46px);
+	letter-spacing: -.03em;
+	line-height: 1;
+	margin: 0 auto 46px;
+	padding: 0 24px;
+}
+
+.meat-science-partner-marquee__viewport {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.meat-science-partner-marquee__viewport::before,
+.meat-science-partner-marquee__viewport::after {
+	content: "";
+	inset: 0 auto 0 0;
+	pointer-events: none;
+	position: absolute;
+	width: clamp(36px, 8vw, 140px);
+	z-index: 2;
+}
+
+.meat-science-partner-marquee__viewport::before {
+	background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0));
+}
+
+.meat-science-partner-marquee__viewport::after {
+	background: linear-gradient(270deg, #fff, rgba(255, 255, 255, 0));
+	left: auto;
+	right: 0;
+}
+
+.meat-science-partner-marquee__track {
+	animation: meat-science-partner-marquee-scroll var(--partner-marquee-duration, 28s) linear infinite;
+	display: flex;
+	width: max-content;
+	will-change: transform;
+}
+
+.meat-science-partner-marquee__group {
+	align-items: center;
+	display: flex;
+	flex: 0 0 auto;
+	gap: clamp(54px, 7vw, 126px);
+	justify-content: space-around;
+	min-width: 100vw;
+	padding: 12px clamp(42px, 6vw, 110px);
+}
+
+.meat-science-partner-marquee__item {
+	align-items: center;
+	display: flex;
+	flex: 0 0 clamp(150px, 14vw, 230px);
+	height: 112px;
+	justify-content: center;
+}
+
+.meat-science-partner-marquee__logo-link {
+	align-items: center;
+	border-radius: 10px;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	padding: 10px;
+	text-decoration: none;
+	transition: background-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+	width: 100%;
+}
+
+.meat-science-partner-marquee__logo-link:hover,
+.meat-science-partner-marquee__logo-link:focus-visible {
+	background: #fff;
+	box-shadow: 0 12px 32px rgba(23, 40, 50, .12);
+	transform: translateY(-5px);
+}
+
+.meat-science-partner-marquee__image {
+	display: block;
+	max-height: 88px;
+	max-width: 100%;
+	object-fit: contain;
+	transition: filter 220ms ease, opacity 220ms ease, transform 220ms ease;
+	width: auto;
+}
+
+.meat-science-partner-marquee__logo-link:hover .meat-science-partner-marquee__image,
+.meat-science-partner-marquee__logo-link:focus-visible .meat-science-partner-marquee__image {
+	transform: scale(1.04);
+}
+
+.meat-science-partner-marquee__all-link {
+	align-items: center;
+	border-bottom: 2px solid #ed1b3b;
+	color: #172832;
+	display: inline-flex;
+	font-size: 17px;
+	font-weight: 700;
+	gap: 10px;
+	line-height: 1.2;
+	margin-top: 38px;
+	padding: 0 2px 6px;
+	text-decoration: none;
+	transition: color 180ms ease, gap 180ms ease;
+}
+
+.meat-science-partner-marquee__all-link:hover,
+.meat-science-partner-marquee__all-link:focus-visible {
+	color: #ed1b3b;
+	gap: 16px;
+}
+
+@keyframes meat-science-partner-marquee-scroll {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+
+	to {
+		transform: translate3d(-50%, 0, 0);
+	}
+}
+
+@media (max-width: 760px) {
+	.meat-science-partner-marquee {
+		padding-bottom: 44px;
+		padding-top: 54px;
+	}
+
+	.meat-science-partner-marquee__heading {
+		margin-bottom: 30px;
+	}
+
+	.meat-science-partner-marquee__group {
+		gap: 44px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.meat-science-partner-marquee__item {
+		flex-basis: 150px;
+		height: 92px;
+	}
+
+	.meat-science-partner-marquee__image {
+		max-height: 72px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.meat-science-partner-marquee__viewport {
+		overflow-x: auto;
+	}
+
+	.meat-science-partner-marquee__track {
+		animation: none;
+	}
+
+	.meat-science-partner-marquee__group[aria-hidden="true"] {
+		display: none;
+	}
+}
+
+.meat-science-video-feature {
+	align-items: center;
+	display: grid;
+	gap: 64px;
+	grid-template-columns: minmax(0, 460px) minmax(0, 1fr);
+	padding-bottom: 64px;
+	padding-top: 64px;
+}
+
+.meat-science-video-feature__media {
+	position: relative;
+}
+
+.meat-science-video-feature__frame {
+	aspect-ratio: 1 / 1;
+	max-width: 460px;
+	position: relative;
+}
+
+.meat-science-video-feature__frame::before {
+	background: #fff;
+	border: 1px solid #e2e2e2;
+	bottom: -24px;
+	content: "";
+	position: absolute;
+	right: -24px;
+	top: 24px;
+	width: 60%;
+	z-index: 0;
+}
+
+.meat-science-video-feature__image {
+	display: block;
+	height: 100%;
+	object-fit: cover;
+	position: relative;
+	width: 100%;
+	z-index: 1;
+}
+
+.meat-science-video-feature__play {
+	align-items: center;
+	background: #fff;
+	border: 0;
+	border-radius: 50%;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+	color: #111;
+	cursor: pointer;
+	display: flex;
+	font-size: 26px;
+	height: 84px;
+	justify-content: center;
+	left: 50%;
+	padding: 0 0 0 6px;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	transition: transform 180ms ease, background-color 180ms ease;
+	width: 84px;
+	z-index: 2;
+}
+
+.meat-science-video-feature__play:hover,
+.meat-science-video-feature__play:focus-visible {
+	background: #ed1b3b;
+	color: #fff;
+	transform: translate(-50%, -50%) scale(1.06);
+}
+
+.meat-science-video-feature__badge {
+	background: #cf1436;
+	color: #fff;
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 20px 32px;
+}
+
+.meat-science-video-feature__description {
+	color: #555;
+	font-size: 18px;
+	line-height: 1.7;
+	margin-top: 28px;
+}
+
+.meat-science-video-feature__description > *:first-child {
+	margin-top: 0;
+}
+
+.meat-science-video-feature__description > *:last-child {
+	margin-bottom: 0;
+}
+
+.meat-science-video-feature__list-box {
+	background: #f6e3c3;
+	margin-top: 28px;
+	padding: 32px 36px;
+}
+
+.meat-science-video-feature__list-heading {
+	font-size: 22px;
+	margin: 0 0 20px;
+}
+
+.meat-science-video-feature__list {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.meat-science-video-feature__list-item {
+	align-items: center;
+	color: #cf1436;
+	display: flex;
+	font-weight: 700;
+	gap: 14px;
+}
+
+.meat-science-video-feature__list-icon {
+	align-items: center;
+	background: #cf1436;
+	border-radius: 50%;
+	color: #fff;
+	display: flex;
+	flex: 0 0 auto;
+	font-size: 12px;
+	height: 22px;
+	justify-content: center;
+	width: 22px;
+}
+
+.meat-science-video-modal {
+	align-items: center;
+	display: flex;
+	inset: 0;
+	justify-content: center;
+	position: fixed;
+	z-index: 1000;
+}
+
+.meat-science-video-modal[hidden] {
+	display: none;
+}
+
+.meat-science-video-modal__overlay {
+	background: rgba(0, 0, 0, .8);
+	inset: 0;
+	position: absolute;
+}
+
+.meat-science-video-modal__dialog {
+	max-width: 960px;
+	position: relative;
+	width: min(92vw, 960px);
+	z-index: 1;
+}
+
+.meat-science-video-modal__close {
+	background: transparent;
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+	font-size: 34px;
+	line-height: 1;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	top: -48px;
+}
+
+.meat-science-video-modal__body {
+	aspect-ratio: 16 / 9;
+	background: #000;
+	width: 100%;
+}
+
+.meat-science-video-modal__body iframe,
+.meat-science-video-modal__body video {
+	border: 0;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+@media (max-width: 900px) {
+	.meat-science-video-feature {
+		gap: 40px;
+		grid-template-columns: 1fr;
+	}
+
+	.meat-science-video-feature__frame {
+		margin: 0 auto;
+		max-width: 380px;
+	}
+}
+
+@media (max-width: 480px) {
+	.meat-science-video-feature__badge {
+		font-size: 18px;
+		padding: 16px 24px;
+	}
+
+	.meat-science-video-feature__play {
+		height: 64px;
+		width: 64px;
+	}
+
+	.meat-science-video-feature__list-box {
+		padding: 24px;
+	}
 }
 
 .meat-science-entry + .meat-science-entry {
@@ -74,4 +1388,1153 @@ a:focus-visible {
 	font-size: 14px;
 	padding: 24px;
 	text-align: center;
+}
+
+@media (max-width: 800px) {
+	.meat-science-main {
+		padding: 32px 18px;
+	}
+
+	.meat-science-builder__block {
+		padding-left: 18px;
+		padding-right: 18px;
+	}
+
+	.meat-science-builder__block--content {
+		font-size: 18px;
+	}
+
+	.meat-science-resource-library__grid {
+		gap: 40px 24px;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.meat-science-resource-downloads__table th,
+	.meat-science-resource-downloads__table td {
+		padding-left: 14px;
+		padding-right: 14px;
+	}
+}
+
+@media (max-width: 480px) {
+	.meat-science-resource-library {
+		padding-bottom: 32px;
+		padding-top: 32px;
+	}
+
+	.meat-science-resource-library__heading {
+		margin-bottom: 40px;
+	}
+
+	.meat-science-resource-library__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.meat-science-resource-downloads {
+		padding-bottom: 32px;
+		padding-top: 32px;
+	}
+
+	.meat-science-resource-downloads__table,
+	.meat-science-resource-downloads__table tbody,
+	.meat-science-resource-downloads__table tr,
+	.meat-science-resource-downloads__table th,
+	.meat-science-resource-downloads__table td {
+		display: block;
+	}
+
+	.meat-science-resource-downloads__table thead {
+		display: none;
+	}
+
+	.meat-science-resource-downloads__table tbody tr {
+		padding: 16px;
+	}
+
+	.meat-science-resource-downloads__table tbody tr + tr {
+		border-top: 1px solid #e9e9e9;
+	}
+
+	.meat-science-resource-downloads__table tbody th,
+	.meat-science-resource-downloads__table tbody td {
+		border: 0;
+		padding: 4px 0;
+	}
+
+	.meat-science-resource-downloads__table td::before {
+		color: #696969;
+		content: attr(data-label);
+		display: inline-block;
+		font-size: 12px;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		margin-right: 8px;
+		text-transform: uppercase;
+	}
+
+	.meat-science-resource-downloads__table tbody th::before {
+		content: attr(data-label);
+		display: block;
+		font-size: 12px;
+		letter-spacing: 0.04em;
+		margin-bottom: 2px;
+		text-transform: uppercase;
+	}
+
+	.meat-science-resource-downloads__action {
+		margin-top: 10px;
+		text-align: left !important;
+		width: auto;
+	}
+
+	.meat-science-resource-downloads__action::before {
+		display: none !important;
+	}
+}
+
+/* ---------------------------------------------------------------------
+ * Page Banner
+ * ------------------------------------------------------------------- */
+
+.meat-science-page-banner {
+	align-items: flex-end;
+	background: #172832;
+	display: flex;
+	isolation: isolate;
+	min-height: clamp(300px, 34vw, 460px);
+	overflow: hidden;
+	position: relative;
+}
+
+.meat-science-page-banner__image {
+	filter: grayscale(.15);
+	height: 100%;
+	inset: 0;
+	object-fit: cover;
+	position: absolute;
+	transform: scale(1.02);
+	width: 100%;
+	z-index: -2;
+}
+
+.meat-science-page-banner__overlay {
+	background:
+		linear-gradient(90deg, rgba(15, 26, 33, .82) 0%, rgba(15, 26, 33, .5) 45%, rgba(15, 26, 33, .1) 100%),
+		linear-gradient(0deg, rgba(15, 26, 33, .55) 0%, rgba(15, 26, 33, 0) 55%);
+	inset: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+.meat-science-page-banner__inner {
+	margin: 0 auto;
+	max-width: 1240px;
+	padding: 64px 24px 56px;
+	width: 100%;
+}
+
+.meat-science-page-banner__accent {
+	background: #ed1b3b;
+	border-radius: 2px;
+	display: block;
+	height: 4px;
+	margin-bottom: 18px;
+	width: 64px;
+}
+
+.meat-science-page-banner__title {
+	color: #fff;
+	font-size: clamp(36px, 4.4vw, 66px);
+	font-weight: 700;
+	letter-spacing: -.02em;
+	line-height: 1.02;
+	margin: 0 0 28px;
+	max-width: 920px;
+	text-shadow: 0 4px 24px rgba(0, 0, 0, .25);
+}
+
+.meat-science-page-banner__button {
+	align-items: center;
+	background: #fff;
+	border-radius: 6px;
+	box-shadow: 0 12px 28px rgba(0, 0, 0, .18);
+	color: #172832;
+	display: inline-flex;
+	font-size: 16px;
+	font-weight: 700;
+	gap: 28px;
+	min-height: 52px;
+	padding: 14px 22px;
+	text-decoration: none;
+	transition: background-color 200ms ease, color 200ms ease;
+}
+
+.meat-science-page-banner__button-icon {
+	color: #ed1b3b;
+	font-size: 20px;
+	line-height: 1;
+	transition: color 200ms ease, transform 200ms ease;
+}
+
+.meat-science-page-banner__button:hover,
+.meat-science-page-banner__button:focus-visible {
+	background: #ed1b3b;
+	color: #fff;
+}
+
+.meat-science-page-banner__button:hover .meat-science-page-banner__button-icon,
+.meat-science-page-banner__button:focus-visible .meat-science-page-banner__button-icon {
+	color: #fff;
+	transform: translateX(5px);
+}
+
+/* ---------------------------------------------------------------------
+ * Sidebar + Content
+ * ------------------------------------------------------------------- */
+
+.meat-science-membership-breadcrumb {
+	margin: 0 auto;
+	max-width: 1240px;
+	padding: 36px 24px 0;
+}
+
+.meat-science-membership-breadcrumb ol {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.meat-science-membership-breadcrumb li + li::before {
+	content: ">";
+	margin-right: 10px;
+}
+
+.meat-science-membership-breadcrumb a {
+	color: #172832;
+	text-decoration: none;
+}
+
+.meat-science-membership-breadcrumb a:hover,
+.meat-science-membership-breadcrumb a:focus-visible {
+	color: #ed1b3b;
+}
+
+.meat-science-membership-title {
+	color: #172832;
+	font-size: clamp(34px, 3.7vw, 50px);
+	letter-spacing: -.02em;
+	line-height: 1.15;
+	margin: 0 0 28px;
+}
+
+.meat-science-sidebar-content--membership {
+	padding-top: 40px;
+}
+
+.meat-science-sidebar-content--membership.meat-science-sidebar-content--full {
+	padding-top: 36px;
+}
+
+.meat-science-sidebar-content--membership .meat-science-sidebar-content__main {
+	color: #252525;
+	font-size: 17px;
+	line-height: 1.6;
+}
+
+.meat-science-sidebar-content--membership .meat-science-sidebar-content__nav {
+	background: #fae9cc;
+	border-radius: 9px;
+	box-shadow: none;
+	padding: 36px 40px;
+}
+
+.meat-science-sidebar-content--membership .meat-science-sidebar-content__nav::after,
+.meat-science-sidebar-content--membership .meat-science-sidebar-content__nav-title::after {
+	display: none;
+}
+
+.meat-science-sidebar-content--membership .meat-science-sidebar-content__nav-title {
+	color: #111;
+	font-size: 20px;
+	margin-bottom: 26px;
+	padding: 0;
+}
+
+.meat-science-sidebar-content--membership .meat-science-sidebar-content__nav-list {
+	gap: 5px;
+}
+
+.meat-science-sidebar-content--membership .meat-science-sidebar-content__nav-link {
+	border: 0;
+	border-radius: 5px;
+	color: #111;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	min-height: 64px;
+	padding: 14px 30px;
+}
+
+.meat-science-sidebar-content--membership .meat-science-sidebar-content__nav-icon {
+	color: #111;
+}
+
+.meat-science-sidebar-content--membership .meat-science-sidebar-content__nav-link:hover,
+.meat-science-sidebar-content--membership .meat-science-sidebar-content__nav-link:focus-visible {
+	background: #ed1b3b;
+	color: #fff;
+	transform: none;
+}
+
+.meat-science-sidebar-content--membership .meat-science-sidebar-content__nav-link:hover .meat-science-sidebar-content__nav-icon,
+.meat-science-sidebar-content--membership .meat-science-sidebar-content__nav-link:focus-visible .meat-science-sidebar-content__nav-icon {
+	color: #fff;
+}
+
+.meat-science-sidebar-content {
+	align-items: start;
+	display: grid;
+	gap: 56px;
+	grid-template-columns: 320px minmax(0, 1fr);
+	max-width: 1240px;
+	padding-bottom: 80px;
+	padding-top: 64px;
+}
+
+.meat-science-sidebar-content--full {
+	grid-template-columns: minmax(0, 1fr);
+}
+
+.meat-science-sidebar-content__aside {
+	display: grid;
+	gap: 28px;
+	position: sticky;
+	top: 24px;
+}
+
+.meat-science-sidebar-content__nav {
+	background: #f7e6c9;
+	border-radius: 14px;
+	box-shadow: 0 18px 40px rgba(23, 40, 50, .08);
+	overflow: hidden;
+	padding: 28px 22px 30px;
+	position: relative;
+}
+
+.meat-science-sidebar-content__nav::after {
+	background: #ed1b3b;
+	bottom: 0;
+	content: "";
+	height: 4px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
+
+.meat-science-sidebar-content__nav-title {
+	color: #172832;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 1.1;
+	margin: 0 0 20px;
+	padding-bottom: 14px;
+	position: relative;
+}
+
+.meat-science-sidebar-content__nav-title::after {
+	background: #ed1b3b;
+	border-radius: 2px;
+	bottom: 0;
+	content: "";
+	height: 3px;
+	left: 0;
+	position: absolute;
+	width: 44px;
+}
+
+.meat-science-sidebar-content__nav-list {
+	display: grid;
+	gap: 8px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.meat-science-sidebar-content__nav-link {
+	align-items: center;
+	background: #fff;
+	border-left: 3px solid transparent;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(23, 40, 50, .06);
+	color: #172832;
+	display: flex;
+	font-size: 16px;
+	font-weight: 600;
+	gap: 16px;
+	justify-content: space-between;
+	line-height: 1.3;
+	padding: 14px 16px;
+	text-decoration: none;
+	transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease, transform 200ms ease;
+}
+
+.meat-science-sidebar-content__nav-icon {
+	color: #ed1b3b;
+	flex: 0 0 auto;
+	font-size: 18px;
+	line-height: 1;
+	transition: color 200ms ease, transform 200ms ease;
+}
+
+.meat-science-sidebar-content__nav-link:hover,
+.meat-science-sidebar-content__nav-link:focus-visible {
+	border-left-color: #ed1b3b;
+	color: #ed1b3b;
+	transform: translateX(4px);
+}
+
+.meat-science-sidebar-content__nav-link:hover .meat-science-sidebar-content__nav-icon,
+.meat-science-sidebar-content__nav-link:focus-visible .meat-science-sidebar-content__nav-icon {
+	transform: translateX(4px);
+}
+
+.meat-science-sidebar-content__nav-link.is-current {
+	background: #ed1b3b;
+	border-left-color: #b5122d;
+	color: #fff;
+}
+
+.meat-science-sidebar-content__nav-link.is-current .meat-science-sidebar-content__nav-icon {
+	color: #fff;
+}
+
+.meat-science-sidebar-content__box {
+	background: var(--sidebar-box-color, #ed1b3b);
+	border-radius: 14px;
+	box-shadow: 0 18px 40px rgba(237, 27, 59, .22);
+	color: #fff;
+	overflow: hidden;
+	padding: 34px 28px;
+	position: relative;
+}
+
+.meat-science-sidebar-content__box::before {
+	border: 28px solid rgba(255, 255, 255, .08);
+	border-radius: 50%;
+	content: "";
+	height: 180px;
+	position: absolute;
+	right: -70px;
+	top: -70px;
+	width: 180px;
+}
+
+.meat-science-sidebar-content__box-text {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1.45;
+	margin-bottom: 26px;
+	position: relative;
+}
+
+.meat-science-sidebar-content__box-text > * {
+	margin: 0;
+}
+
+.meat-science-sidebar-content__box-button {
+	align-items: center;
+	border: 2px solid #fff;
+	border-radius: 6px;
+	color: #fff;
+	display: flex;
+	font-size: 16px;
+	font-weight: 700;
+	gap: 16px;
+	justify-content: center;
+	min-height: 52px;
+	padding: 12px 20px;
+	position: relative;
+	text-decoration: none;
+	transition: background-color 200ms ease, color 200ms ease;
+}
+
+.meat-science-sidebar-content__box-button-icon {
+	font-size: 20px;
+	line-height: 1;
+	transition: transform 200ms ease;
+}
+
+.meat-science-sidebar-content__box-button:hover,
+.meat-science-sidebar-content__box-button:focus-visible {
+	background: #fff;
+	color: var(--sidebar-box-color, #ed1b3b);
+}
+
+.meat-science-sidebar-content__box-button:hover .meat-science-sidebar-content__box-button-icon,
+.meat-science-sidebar-content__box-button:focus-visible .meat-science-sidebar-content__box-button-icon {
+	transform: translateX(5px);
+}
+
+.meat-science-sidebar-content__main {
+	color: #56636b;
+	font-size: 18px;
+	line-height: 1.75;
+}
+
+.meat-science-sidebar-content__main::after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+.meat-science-sidebar-content__main p {
+	margin: 0 0 20px;
+}
+
+.meat-science-sidebar-content__main h2,
+.meat-science-sidebar-content__main h3 {
+	clear: both;
+	color: #172832;
+	font-weight: 700;
+	letter-spacing: -.01em;
+	line-height: 1.15;
+	margin: 48px 0 18px;
+	padding-left: 18px;
+	position: relative;
+}
+
+.meat-science-sidebar-content__main h2 {
+	font-size: clamp(26px, 2.4vw, 34px);
+}
+
+.meat-science-sidebar-content__main h3 {
+	font-size: clamp(22px, 1.8vw, 26px);
+}
+
+.meat-science-sidebar-content__main h2::before,
+.meat-science-sidebar-content__main h3::before {
+	background: #ed1b3b;
+	border-radius: 2px;
+	bottom: .12em;
+	content: "";
+	left: 0;
+	position: absolute;
+	top: .12em;
+	width: 4px;
+}
+
+.meat-science-sidebar-content__main a {
+	color: #ed1b3b;
+	font-weight: 600;
+	text-decoration: underline;
+	text-decoration-color: rgba(237, 27, 59, .3);
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
+	transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.meat-science-sidebar-content__main a:hover,
+.meat-science-sidebar-content__main a:focus-visible {
+	color: #b5122d;
+	text-decoration-color: currentColor;
+}
+
+.meat-science-sidebar-content__main img {
+	border-radius: 12px;
+	box-shadow: 0 14px 34px rgba(23, 40, 50, .14);
+	height: auto;
+	max-width: 100%;
+}
+
+.meat-science-sidebar-content__main .alignleft,
+.meat-science-sidebar-content__main img[style*="float:left"],
+.meat-science-sidebar-content__main img[style*="float: left"] {
+	float: left;
+	margin: 6px 32px 20px 0;
+	max-width: 45%;
+}
+
+.meat-science-sidebar-content__main .alignright,
+.meat-science-sidebar-content__main img[style*="float:right"],
+.meat-science-sidebar-content__main img[style*="float: right"] {
+	float: right;
+	margin: 6px 0 20px 32px;
+	max-width: 45%;
+}
+
+.meat-science-sidebar-content__main .aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.meat-science-sidebar-content__main ul,
+.meat-science-sidebar-content__main ol {
+	margin: 0 0 20px;
+	padding-left: 22px;
+}
+
+.meat-science-sidebar-content__main blockquote {
+	background: #fdf3f5;
+	border-left: 4px solid #ed1b3b;
+	border-radius: 0 10px 10px 0;
+	color: #172832;
+	margin: 28px 0;
+	padding: 20px 26px;
+}
+
+@media (max-width: 1024px) {
+	.meat-science-sidebar-content {
+		gap: 40px;
+		grid-template-columns: 280px minmax(0, 1fr);
+	}
+}
+
+@media (max-width: 860px) {
+	.meat-science-sidebar-content {
+		grid-template-columns: 1fr;
+		padding-bottom: 56px;
+		padding-top: 40px;
+	}
+
+	.meat-science-sidebar-content__aside {
+		order: 2;
+		position: static;
+	}
+
+	.meat-science-page-banner__inner {
+		padding-bottom: 40px;
+	}
+}
+
+@media (max-width: 560px) {
+	.meat-science-sidebar-content__main .alignleft,
+	.meat-science-sidebar-content__main .alignright,
+	.meat-science-sidebar-content__main img[style*="float"] {
+		float: none !important;
+		margin: 0 0 20px;
+		max-width: 100%;
+	}
+}
+
+/* ---------------------------------------------------------------------
+ * Page Banner breadcrumb
+ * ------------------------------------------------------------------- */
+
+.meat-science-page-banner__breadcrumb {
+	margin-top: 22px;
+}
+
+.meat-science-page-banner__button + .meat-science-page-banner__breadcrumb {
+	margin-top: 26px;
+}
+
+.meat-science-page-banner__breadcrumb ol {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.meat-science-page-banner__breadcrumb li {
+	align-items: center;
+	color: rgba(255, 255, 255, .78);
+	display: inline-flex;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.meat-science-page-banner__breadcrumb li + li::before {
+	color: #ed1b3b;
+	content: "/";
+	font-weight: 700;
+	margin: 0 12px;
+}
+
+.meat-science-page-banner__breadcrumb a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.meat-science-page-banner__breadcrumb a:hover,
+.meat-science-page-banner__breadcrumb a:focus-visible {
+	color: #ffd5dc;
+}
+
+.meat-science-page-banner__breadcrumb [aria-current] {
+	color: rgba(255, 255, 255, .78);
+}
+
+/* ---------------------------------------------------------------------
+ * Sidebar + Content: rich content components
+ * ------------------------------------------------------------------- */
+
+.meat-science-sidebar-content__main > h2:first-child,
+.meat-science-sidebar-content__main > h3:first-child {
+	margin-top: 0;
+}
+
+.meat-science-sidebar-content__main h4,
+.meat-science-sidebar-content__main h5 {
+	color: #172832;
+	font-size: 20px;
+	line-height: 1.25;
+	margin: 28px 0 12px;
+}
+
+/* People cards (leadership, staff, speakers). */
+.meat-science-sidebar-content__main .featured-list {
+	clear: both;
+	margin: 28px 0 40px;
+}
+
+.meat-science-sidebar-content__main .featured-list .row {
+	display: grid;
+	gap: 22px;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.meat-science-sidebar-content__main .feature-item {
+	background: #fff;
+	border: 1px solid #eceff1;
+	border-radius: 14px;
+	box-shadow: 0 10px 28px rgba(23, 40, 50, .07);
+	height: 100%;
+	overflow: hidden;
+	padding: 0 0 20px;
+	position: relative;
+	text-align: center;
+	transition: box-shadow 250ms ease, transform 250ms ease;
+}
+
+.meat-science-sidebar-content__main .feature-item::after {
+	background: #ed1b3b;
+	bottom: 0;
+	content: "";
+	height: 3px;
+	left: 0;
+	position: absolute;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 300ms ease;
+	width: 100%;
+}
+
+.meat-science-sidebar-content__main .feature-item:hover {
+	box-shadow: 0 18px 40px rgba(23, 40, 50, .13);
+	transform: translateY(-4px);
+}
+
+.meat-science-sidebar-content__main .feature-item:hover::after {
+	transform: scaleX(1);
+}
+
+.meat-science-sidebar-content__main .feature-image {
+	aspect-ratio: 1;
+	background: #f7e6c9;
+	margin-bottom: 16px;
+	overflow: hidden;
+}
+
+.meat-science-sidebar-content__main .feature-image img {
+	border-radius: 0;
+	box-shadow: none;
+	display: block;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.meat-science-sidebar-content__main .feature-item .name {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.25;
+	padding: 0 16px;
+}
+
+.meat-science-sidebar-content__main .feature-item .name a {
+	color: #172832;
+	text-decoration: none;
+}
+
+.meat-science-sidebar-content__main .feature-item .name a:hover {
+	color: #ed1b3b;
+}
+
+.meat-science-sidebar-content__main .feature-item .title {
+	color: #ed1b3b;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 1.35;
+	margin-top: 6px;
+	padding: 0 16px;
+}
+
+.meat-science-sidebar-content__main .feature-item .university {
+	color: #65727a;
+	font-size: 14px;
+	line-height: 1.35;
+	margin-top: 4px;
+	padding: 0 16px;
+}
+
+/* Logo grids (sustaining partners, collaborative partners). */
+.meat-science-sidebar-content__main .sponsor-logos .row,
+.meat-science-sidebar-content__main .sf-Gallery-thumbs {
+	display: grid;
+	gap: 18px;
+	grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+	list-style: none;
+	margin: 18px 0 36px;
+	padding: 0;
+}
+
+.meat-science-sidebar-content__main .sponsor-logos .grid,
+.meat-science-sidebar-content__main .sf-Gallery-thumbs li {
+	align-items: center;
+	background: #fff;
+	border: 1px solid #eceff1;
+	border-radius: 12px;
+	display: flex;
+	justify-content: center;
+	min-height: 120px;
+	padding: 18px;
+	transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.meat-science-sidebar-content__main .sponsor-logos .grid:hover,
+.meat-science-sidebar-content__main .sf-Gallery-thumbs li:hover {
+	border-color: #ed1b3b;
+	box-shadow: 0 10px 24px rgba(23, 40, 50, .08);
+}
+
+.meat-science-sidebar-content__main .sponsor-logos a {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.meat-science-sidebar-content__main .sponsor-logos img,
+.meat-science-sidebar-content__main .sf-Gallery-thumbs img {
+	border-radius: 0;
+	box-shadow: none;
+	max-height: 84px;
+	object-fit: contain;
+	width: auto;
+}
+
+/* Document / link lists (bylaws, annual reports, white papers). */
+.meat-science-sidebar-content__main ul.list-unstyled {
+	display: grid;
+	gap: 10px;
+	list-style: none;
+	padding: 0;
+}
+
+.meat-science-sidebar-content__main .media {
+	background: #fff;
+	border: 1px solid #eceff1;
+	border-left: 4px solid #ed1b3b;
+	border-radius: 10px;
+	transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.meat-science-sidebar-content__main .media:hover {
+	box-shadow: 0 10px 24px rgba(23, 40, 50, .08);
+	transform: translateX(4px);
+}
+
+.meat-science-sidebar-content__main .media-body {
+	padding: 14px 18px;
+}
+
+.meat-science-sidebar-content__main .media-body a {
+	color: #172832;
+	text-decoration: none;
+}
+
+.meat-science-sidebar-content__main .media-body a::after {
+	color: #ed1b3b;
+	content: " \2192";
+}
+
+.meat-science-sidebar-content__main .media-body a:hover {
+	color: #ed1b3b;
+}
+
+/* Cards (publications, books & guides). */
+.meat-science-sidebar-content__main .entry-cards .row,
+.meat-science-sidebar-content__main .row:has(> .card-col) {
+	display: grid;
+	gap: 22px;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	margin: 24px 0 40px;
+	padding: 0 !important;
+}
+
+.meat-science-sidebar-content__main .card-col .card {
+	background: #fff;
+	border: 1px solid #eceff1;
+	border-radius: 14px;
+	box-shadow: 0 10px 28px rgba(23, 40, 50, .07);
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow: hidden;
+	transition: box-shadow 250ms ease, transform 250ms ease;
+}
+
+.meat-science-sidebar-content__main .card-col .card:hover {
+	box-shadow: 0 18px 40px rgba(23, 40, 50, .13);
+	transform: translateY(-4px);
+}
+
+.meat-science-sidebar-content__main .card-image {
+	align-items: center;
+	aspect-ratio: 4 / 3;
+	background: #fff;
+	border-bottom: 1px solid #eceff1;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	padding: 18px;
+}
+
+.meat-science-sidebar-content__main .card-image img {
+	border-radius: 0;
+	box-shadow: none;
+	display: block;
+	height: 100%;
+	object-fit: contain;
+	transition: transform 400ms ease;
+	width: 100%;
+}
+
+.meat-science-sidebar-content__main .card-col .card:hover .card-image img {
+	transform: scale(1.04);
+}
+
+.meat-science-sidebar-content__main .card-heading {
+	flex: 1;
+	padding: 18px 20px 6px;
+}
+
+.meat-science-sidebar-content__main .card-heading h3 {
+	font-size: 19px;
+	margin: 0;
+	padding: 0;
+}
+
+.meat-science-sidebar-content__main .card-heading h3::before {
+	display: none;
+}
+
+.meat-science-sidebar-content__main .card-footer {
+	padding: 8px 20px 20px;
+}
+
+.meat-science-sidebar-content__main .card-action a {
+	font-size: 15px;
+	text-decoration: none;
+}
+
+.meat-science-sidebar-content__main .card-action a::after {
+	content: " \2192";
+	display: inline-block;
+	transition: transform 200ms ease;
+}
+
+.meat-science-sidebar-content__main .card-action a:hover::after {
+	transform: translateX(4px);
+}
+
+/* Webinars and embeds. */
+.meat-science-sidebar-content__main .webinars > div {
+	display: grid;
+	gap: 26px;
+}
+
+.meat-science-sidebar-content__main .webinar {
+	background: #fff;
+	border: 1px solid #eceff1;
+	border-radius: 14px;
+	box-shadow: 0 10px 28px rgba(23, 40, 50, .06);
+	padding: 22px 24px;
+}
+
+.meat-science-sidebar-content__main .webinar h5 {
+	margin-top: 0;
+}
+
+.meat-science-sidebar-content__main .webinar h5 a {
+	color: #172832;
+	text-decoration: none;
+}
+
+.meat-science-sidebar-content__main .videoUrl {
+	aspect-ratio: 16 / 9;
+	background: #111;
+	border-radius: 12px;
+	margin: 16px 0 20px;
+	overflow: hidden;
+}
+
+.meat-science-sidebar-content__main .videoUrl iframe,
+.meat-science-sidebar-content__main video {
+	border: 0;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.meat-science-sidebar-content__main video {
+	border-radius: 12px;
+	height: auto;
+	margin: 16px 0;
+}
+
+.meat-science-sidebar-content__main figure {
+	margin: 24px 0;
+}
+
+.meat-science-sidebar-content__main figcaption {
+	color: #65727a;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+/* Buttons. */
+.meat-science-sidebar-content__main .custom-button {
+	margin: 24px 0;
+}
+
+.meat-science-sidebar-content__main .custom-button.aligncenter {
+	text-align: center;
+}
+
+.meat-science-sidebar-content__main .single-btn a {
+	align-items: center;
+	background: #ed1b3b;
+	border-radius: 6px;
+	box-shadow: 0 10px 22px rgba(237, 27, 59, .18);
+	color: #fff;
+	display: inline-flex;
+	font-weight: 700;
+	gap: 14px;
+	padding: 14px 24px;
+	text-decoration: none;
+	transition: background-color 200ms ease;
+}
+
+.meat-science-sidebar-content__main .single-btn a:hover {
+	background: #172832;
+	color: #fff;
+}
+
+/* Tables. */
+.meat-science-sidebar-content__main table {
+	border-collapse: separate;
+	border-radius: 12px;
+	border-spacing: 0;
+	box-shadow: 0 0 0 1px #eceff1;
+	font-size: 16px;
+	height: auto !important;
+	margin: 20px 0 32px;
+	overflow: hidden;
+	width: 100%;
+}
+
+@media (max-width: 700px) {
+	.meat-science-sidebar-content__main table {
+		display: block;
+		overflow-x: auto;
+	}
+}
+
+.meat-science-sidebar-content__main th,
+.meat-science-sidebar-content__main td {
+	border-bottom: 1px solid #eceff1;
+	padding: 12px 16px;
+	text-align: left;
+	vertical-align: top;
+}
+
+.meat-science-sidebar-content__main thead th {
+	background: #172832;
+	color: #fff;
+	font-size: 18px;
+}
+
+.meat-science-sidebar-content__main tbody tr:first-child td {
+	background: #f7e6c9;
+	color: #172832;
+}
+
+.meat-science-sidebar-content__main tbody tr:nth-child(even) td {
+	background: #fafbfb;
+}
+
+/* Accordions. */
+.meat-science-sidebar-content__main .ms-accordion {
+	background: #fff;
+	border: 1px solid #eceff1;
+	border-radius: 12px;
+	margin: 0 0 12px;
+	overflow: hidden;
+}
+
+.meat-science-sidebar-content__main .ms-accordion summary {
+	align-items: center;
+	color: #172832;
+	cursor: pointer;
+	display: flex;
+	font-size: 20px;
+	font-weight: 700;
+	justify-content: space-between;
+	list-style: none;
+	padding: 16px 20px;
+}
+
+.meat-science-sidebar-content__main .ms-accordion summary::-webkit-details-marker {
+	display: none;
+}
+
+.meat-science-sidebar-content__main .ms-accordion summary::after {
+	color: #ed1b3b;
+	content: "+";
+	font-size: 26px;
+	line-height: 1;
+	transition: transform 200ms ease;
+}
+
+.meat-science-sidebar-content__main .ms-accordion[open] summary {
+	border-bottom: 1px solid #eceff1;
+}
+
+.meat-science-sidebar-content__main .ms-accordion[open] summary::after {
+	transform: rotate(45deg);
+}
+
+.meat-science-sidebar-content__main .ms-accordion__body {
+	padding: 16px 20px 4px;
+}
+
+/* Two-column Sitefinity rows. */
+.meat-science-sidebar-content__main .sf_cols {
+	display: grid;
+	gap: 28px;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+@media (max-width: 560px) {
+	.meat-science-sidebar-content__main .featured-list .row {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 14px;
+	}
 }
