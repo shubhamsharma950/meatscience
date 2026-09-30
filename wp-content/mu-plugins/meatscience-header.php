@@ -47,6 +47,64 @@ function meatscience_register_header_fields() {
 				meatscience_color_field( 'social_icon_color', __( 'Social Icon Color', 'meatscience' ), '#ffffff' ),
 				meatscience_color_field( 'social_icon_hover_color', __( 'Social Icon Hover Color', 'meatscience' ), '#ffd5dc' ),
 				array(
+					'key'          => 'field_meatscience_second_bar_settings',
+					'label'        => __( 'Main Navigation Bar', 'meatscience' ),
+					'name'         => '',
+					'type'         => 'accordion',
+					'open'         => 1,
+				),
+				array(
+					'key'           => 'field_meatscience_second_bar_logo',
+					'label'         => __( 'Main Header Logo', 'meatscience' ),
+					'name'          => 'second_bar_logo',
+					'type'          => 'image',
+					'return_format' => 'array',
+					'preview_size'  => 'medium',
+					'library'       => 'all',
+				),
+				meatscience_color_field( 'second_bar_background_color', __( 'Main Header Background Color', 'meatscience' ), '#1f1f1f' ),
+				array(
+					'key'           => 'field_meatscience_second_bar_background_image',
+					'label'         => __( 'Main Header Background Image', 'meatscience' ),
+					'name'          => 'second_bar_background_image',
+					'type'          => 'image',
+					'return_format' => 'array',
+					'preview_size'  => 'medium',
+					'library'       => 'all',
+				),
+				array(
+					'key'     => 'field_meatscience_left_header_menu',
+					'label'   => __( 'Left Side Menu', 'meatscience' ),
+					'name'    => 'left_header_menu',
+					'type'    => 'select',
+					'choices' => meatscience_get_menu_choices(),
+					'ui'      => 1,
+				),
+				array(
+					'key'     => 'field_meatscience_right_header_menu',
+					'label'   => __( 'Right Side Menu', 'meatscience' ),
+					'name'    => 'right_header_menu',
+					'type'    => 'select',
+					'choices' => meatscience_get_menu_choices(),
+					'ui'      => 1,
+				),
+				array(
+					'key'           => 'field_meatscience_second_bar_text_color',
+					'label'         => __( 'Main Header Text Color', 'meatscience' ),
+					'name'          => 'second_bar_text_color',
+					'type'          => 'color_picker',
+					'default_value' => '#ffffff',
+					'return_format' => 'string',
+				),
+				array(
+					'key'           => 'field_meatscience_second_bar_hover_color',
+					'label'         => __( 'Main Header Hover Line Color', 'meatscience' ),
+					'name'          => 'second_bar_hover_color',
+					'type'          => 'color_picker',
+					'default_value' => '#ed1b3b',
+					'return_format' => 'string',
+				),
+				array(
 					'key'          => 'field_meatscience_menu_links',
 					'label'        => __( 'Menu Links', 'meatscience' ),
 					'name'         => 'menu_links',
@@ -148,6 +206,23 @@ function meatscience_register_header_fields() {
 add_action( 'acf/init', 'meatscience_register_header_fields' );
 
 /**
+ * Return Appearance > Menus as choices for the ACF menu selectors.
+ *
+ * @return array<int|string, string>
+ */
+function meatscience_get_menu_choices() {
+	$choices = array(
+		'' => __( 'Select a menu', 'meatscience' ),
+	);
+
+	foreach ( wp_get_nav_menus() as $menu ) {
+		$choices[ $menu->term_id ] = $menu->name;
+	}
+
+	return $choices;
+}
+
+/**
  * Build a reusable ACF color picker field definition.
  *
  * @param string $name Field name.
@@ -175,9 +250,16 @@ function meatscience_enqueue_header_assets() {
 	}
 
 	wp_enqueue_style(
+		'meatscience-font',
+		'https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@400;500;600;700&display=swap',
+		array(),
+		null
+	);
+
+	wp_enqueue_style(
 		'meatscience-header',
 		MEATSCIENCE_HEADER_URL . '/header.css',
-		array( 'dashicons' ),
+		array( 'dashicons', 'meatscience-font' ),
 		'1.0.0'
 	);
 }
@@ -249,6 +331,15 @@ function meatscience_render_header() {
 	);
 	$menu_links   = get_field( 'menu_links', 'option' );
 	$social_links = get_field( 'social_links', 'option' );
+	$logo         = get_field( 'second_bar_logo', 'option' );
+	$background   = get_field( 'second_bar_background_image', 'option' );
+	$left_menu    = get_field( 'left_header_menu', 'option' );
+	$right_menu   = get_field( 'right_header_menu', 'option' );
+	$second_bar_colors = array(
+		'background' => sanitize_hex_color( get_field( 'second_bar_background_color', 'option' ) ) ?: '#1f1f1f',
+		'text'       => sanitize_hex_color( get_field( 'second_bar_text_color', 'option' ) ) ?: '#ffffff',
+		'hover'      => sanitize_hex_color( get_field( 'second_bar_hover_color', 'option' ) ) ?: '#ed1b3b',
+	);
 
 	if ( ! is_array( $menu_links ) ) {
 		$menu_links = array();
@@ -300,6 +391,64 @@ function meatscience_render_header() {
 			<?php endif; ?>
 		</div>
 	</header>
+	<?php
+	$main_header_style = '--ms-main-bg:' . $second_bar_colors['background'] . ';--ms-main-text:' . $second_bar_colors['text'] . ';--ms-main-hover:' . $second_bar_colors['hover'] . ';';
+	if ( is_array( $background ) && ! empty( $background['url'] ) ) {
+		$main_header_style .= '--ms-main-image:url(' . esc_url( $background['url'] ) . ');';
+	}
+	?>
+	<header class="meatscience-main-header" style="<?php echo esc_attr( $main_header_style ); ?>">
+		<div class="meatscience-main-header__inner">
+			<nav class="meatscience-main-header__nav meatscience-main-header__nav--left" aria-label="<?php esc_attr_e( 'Left header menu', 'meatscience' ); ?>">
+				<?php
+				if ( $left_menu ) {
+					wp_nav_menu(
+						array(
+							'menu'        => (int) $left_menu,
+							'container'   => false,
+							'menu_class'  => 'meatscience-main-header__menu',
+							'fallback_cb' => false,
+							'depth'       => 3,
+						)
+					);
+				}
+				?>
+			</nav>
+			<a class="meatscience-main-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+				<?php if ( is_array( $logo ) && ! empty( $logo['url'] ) ) : ?>
+					<img src="<?php echo esc_url( $logo['url'] ); ?>" alt="<?php echo esc_attr( $logo['alt'] ?: get_bloginfo( 'name' ) ); ?>">
+				<?php else : ?>
+					<span><?php echo esc_html( get_bloginfo( 'name' ) ); ?></span>
+				<?php endif; ?>
+			</a>
+			<div class="meatscience-main-header__right">
+				<nav class="meatscience-main-header__nav meatscience-main-header__nav--right" aria-label="<?php esc_attr_e( 'Right header menu', 'meatscience' ); ?>">
+					<?php
+					if ( $right_menu ) {
+						wp_nav_menu(
+							array(
+								'menu'        => (int) $right_menu,
+								'container'   => false,
+								'menu_class'  => 'meatscience-main-header__menu',
+								'fallback_cb' => false,
+								'depth'       => 3,
+							)
+						);
+					}
+					?>
+				</nav>
+				<button class="meatscience-main-header__search-toggle" type="button" aria-expanded="false" aria-controls="meatscience-main-header-search">
+					<span class="dashicons dashicons-search" aria-hidden="true"></span>
+					<span class="screen-reader-text"><?php esc_html_e( 'Open search', 'meatscience' ); ?></span>
+				</button>
+				<form id="meatscience-main-header-search" class="meatscience-main-header__search" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<label class="screen-reader-text" for="meatscience-header-search-input"><?php esc_html_e( 'Search', 'meatscience' ); ?></label>
+					<input id="meatscience-header-search-input" type="search" name="s" placeholder="<?php esc_attr_e( 'Search', 'meatscience' ); ?>">
+					<button type="submit"><span class="dashicons dashicons-search" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e( 'Submit search', 'meatscience' ); ?></span></button>
+				</form>
+			</div>
+		</div>
+	</header>
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
 			var toggle = document.querySelector('.meatscience-header__toggle');
@@ -310,6 +459,18 @@ function meatscience_render_header() {
 				toggle.setAttribute('aria-expanded', String(!expanded));
 				menu.classList.toggle('is-open', !expanded);
 			});
+			var searchToggle = document.querySelector('.meatscience-main-header__search-toggle');
+			var search = document.getElementById('meatscience-main-header-search');
+			if (searchToggle && search) {
+				searchToggle.addEventListener('click', function () {
+					var expanded = searchToggle.getAttribute('aria-expanded') === 'true';
+					searchToggle.setAttribute('aria-expanded', String(!expanded));
+					search.classList.toggle('is-open', !expanded);
+					if (!expanded) {
+						search.querySelector('input').focus();
+					}
+				});
+			}
 		});
 	</script>
 	<?php

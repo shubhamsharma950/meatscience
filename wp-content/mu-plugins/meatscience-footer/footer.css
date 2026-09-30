@@ -1,0 +1,110 @@
+.meatscience-footer {
+	background-color: var(--ms-footer-bg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)), var(--ms-footer-image, none);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: var(--ms-footer-text);
+	padding: 56px 24px 60px;
+}
+
+.meatscience-footer__inner {
+	align-items: center;
+	display: grid;
+	gap: 48px;
+	grid-template-columns: minmax(180px, 0.8fr) minmax(0, 2fr);
+	margin: 0 auto;
+	max-width: 1720px;
+}
+
+.meatscience-footer__brand {
+	text-align: center;
+}
+
+.meatscience-footer__logo-link {
+	display: inline-block;
+	background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.meatscience-footer__logo {
+	display: block;
+	height: auto;
+	margin: 0 auto;
+	max-height: 142px;
+	max-width: 230px;
+	width: auto;
+}
+
+.meatscience-footer__caption {
+	font-size: clamp(16px, 1.25vw, 20px);
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 10px 0 0;
+}
+
+.meatscience-footer__content {
+	min-width: 0;
+	text-align: center;
+}
+
+.meatscience-footer__menu {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px 38px;
+	justify-content: center;
+	list-style: none;
+	margin: 0 0 16px;
+	padding: 0;
+}
+
+.meatscience-footer__menu a {
+	color: var(--ms-footer-link);
+	font-size: clamp(23px, 2.05vw, 34px);
+	font-weight: 700;
+	line-height: 1.1;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: color 180ms ease;
+}
+
+.meatscience-footer__menu a:hover,
+.meatscience-footer__menu a:focus-visible {
+	color: var(--ms-footer-link-hover);
+}
+
+.meatscience-footer__copyright {
+	font-family: Arial, sans-serif;
+	font-size: clamp(17px, 1.4vw, 24px);
+	line-height: 1.35;
+	margin: 0;
+}
+
+.meatscience-footer__disclaimer {
+	font-family: Arial, sans-serif;
+	font-size: clamp(11px, 0.72vw, 13px);
+	line-height: 1.45;
+	margin: 8px auto 0;
+	max-width: 980px;
+}
+
+.meatscience-footer__disclaimer p {
+	margin: 0;
+}
+
+@media (max-width: 800px) {
+	.meatscience-footer {
+		padding-bottom: 42px;
+		padding-top: 42px;
+	}
+
+	.meatscience-footer__inner {
+		gap: 32px;
+		grid-template-columns: 1fr;
+	}
+
+	.meatscience-footer__menu {
+		gap: 14px 24px;
+	}
+}
